@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfvdlnchlgryb"]
+
+[ext_resource type="PackedScene" uid="uid://cv5pjs6gspsvy" path="res://Player.tscn" id="1_c6b16"]
+[ext_resource type="Script" path="res://Launcher.cs" id="1_vtmoa"]
+[ext_resource type="Texture2D" uid="uid://d3awhgep122mx" path="res://room1.png" id="2_evyeq"]
+[ext_resource type="Script" path="res://WallCollision.cs" id="3_1acu8"]
+[ext_resource type="Script" path="res://BottomCollision.cs" id="4_7lou7"]
+[ext_resource type="Script" path="res://HitsTakenLabel.cs" id="5_ogdor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ev6w"]
+size = Vector2(238, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2ayk"]
+size = Vector2(274, 650)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsmn0"]
+size = Vector2(1160.5, 318.5)
+
+[node name="Room1" type="Node2D" node_paths=PackedStringArray("LaunchPercentageLabel")]
+script = ExtResource("1_vtmoa")
+LaunchPercentageLabel = NodePath("LaunchPercentageLabel")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(583, 322)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 651.0
+texture = ExtResource("2_evyeq")
+expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_c6b16")]
+position = Vector2(484, 41)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_1acu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(121, 325)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("3_1acu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1026, 326)
+shape = SubResource("RectangleShape2D_p2ayk")
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("4_7lou7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(582.75, 811.75)
+shape = SubResource("RectangleShape2D_fsmn0")
+
+[node name="HitsTakenLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_ogdor")
+
+[node name="LaunchPercentageLabel" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 41.0
+offset_bottom = 53.0
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="Collision"]
+[connection signal="body_entered" from="Area2D2" to="Area2D" method="Collision"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="Collision"]

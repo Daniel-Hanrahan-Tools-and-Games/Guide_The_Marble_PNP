@@ -1,0 +1,211 @@
+[gd_scene load_steps=10 format=3 uid="uid://c21dv85qi7r32"]
+
+[ext_resource type="Script" path="res://Launcher.cs" id="1_epx5s"]
+[ext_resource type="Texture2D" uid="uid://dq6h627tatb8h" path="res://room3.png" id="1_nrgmp"]
+[ext_resource type="PackedScene" uid="uid://cv5pjs6gspsvy" path="res://Player.tscn" id="2_27jab"]
+[ext_resource type="Script" path="res://BottomCollision.cs" id="3_hwp8o"]
+[ext_resource type="Script" path="res://WallCollision.cs" id="4_7i4k5"]
+[ext_resource type="PackedScene" uid="uid://b0q3nkh8lg4f3" path="res://Bumper.tscn" id="5_rg2pg"]
+[ext_resource type="Script" path="res://HitsTakenLabel.cs" id="6_fkao1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqw8v"]
+size = Vector2(1160.5, 40.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ev6w"]
+size = Vector2(47, 45.75)
+
+[node name="Room3" type="Node2D" node_paths=PackedStringArray("LaunchPercentageLabel")]
+script = ExtResource("1_epx5s")
+LaunchPercentageLabel = NodePath("LaunchPercentageLabel")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(583, 322)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 651.0
+texture = ExtResource("1_nrgmp")
+expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_27jab")]
+position = Vector2(643, 15)
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("3_hwp8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(582.75, 672.75)
+shape = SubResource("RectangleShape2D_nqw8v")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(765, 130)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(830, 216)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D4" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(755, 268)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D5" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(666, 309)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D7" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7"]
+position = Vector2(849, 93)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D8" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8"]
+position = Vector2(29, 343)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D12" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D12"]
+position = Vector2(911, 40)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D13" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D13"]
+position = Vector2(816, 411)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D14" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D14"]
+position = Vector2(730, 370)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D15" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D15"]
+position = Vector2(182, 488)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D16" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D16"]
+position = Vector2(102, 425)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D17" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D17"]
+position = Vector2(939, 612)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D18" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D18"]
+position = Vector2(909, 530)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D19" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D19"]
+position = Vector2(803, 474)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D22" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D22"]
+position = Vector2(263, 553)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D23" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D23"]
+position = Vector2(455, 586)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Area2D24" type="Area2D" parent="."]
+script = ExtResource("4_7i4k5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D24"]
+position = Vector2(527, 610)
+shape = SubResource("RectangleShape2D_6ev6w")
+
+[node name="Bumper" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(309, 285)
+
+[node name="Bumper2" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(702, 163)
+
+[node name="Bumper3" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(362, 138)
+
+[node name="Bumper4" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(540, 503)
+
+[node name="Bumper5" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(311, 432)
+
+[node name="Bumper6" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(695, 421)
+
+[node name="Bumper7" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(710, 554)
+
+[node name="Bumper9" parent="." instance=ExtResource("5_rg2pg")]
+position = Vector2(390, 341)
+
+[node name="HitsTakenLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("6_fkao1")
+
+[node name="LaunchPercentageLabel" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 30.0
+offset_right = 41.0
+offset_bottom = 53.0
+
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="Collision"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="Collision"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="Collision"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="Collision"]
+[connection signal="body_entered" from="Area2D5" to="Area2D5" method="Collision"]
+[connection signal="body_entered" from="Area2D7" to="Area2D7" method="Collision"]
+[connection signal="body_entered" from="Area2D8" to="Area2D8" method="Collision"]
+[connection signal="body_entered" from="Area2D12" to="Area2D12" method="Collision"]
+[connection signal="body_entered" from="Area2D13" to="Area2D13" method="Collision"]
+[connection signal="body_entered" from="Area2D14" to="Area2D14" method="Collision"]
+[connection signal="body_entered" from="Area2D15" to="Area2D15" method="Collision"]
+[connection signal="body_entered" from="Area2D16" to="Area2D16" method="Collision"]
+[connection signal="body_entered" from="Area2D17" to="Area2D17" method="Collision"]
+[connection signal="body_entered" from="Area2D18" to="Area2D18" method="Collision"]
+[connection signal="body_entered" from="Area2D19" to="Area2D19" method="Collision"]
+[connection signal="body_entered" from="Area2D22" to="Area2D22" method="Collision"]
+[connection signal="body_entered" from="Area2D23" to="Area2D23" method="Collision"]
+[connection signal="body_entered" from="Area2D24" to="Area2D24" method="Collision"]

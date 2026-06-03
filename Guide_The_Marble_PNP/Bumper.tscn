@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0q3nkh8lg4f3"]
+
+[ext_resource type="Script" path="res://Bumper.cs" id="1_l0htm"]
+[ext_resource type="Texture2D" uid="uid://cxfqp5ht236d4" path="res://spritesheet.png" id="1_ortkh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ekfk"]
+atlas = ExtResource("1_ortkh")
+region = Rect2(438, 30, 219, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soqv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekfk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_345k3"]
+size = Vector2(43.875, 14)
+
+[node name="Bumper" type="Area2D"]
+script = ExtResource("1_l0htm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_soqv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 23)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_345k3")

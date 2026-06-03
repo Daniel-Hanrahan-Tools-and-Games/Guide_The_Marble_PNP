@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2wvhiq7uae6w"]
+
+[ext_resource type="Script" path="res://MainMenu.cs" id="1_7aj56"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r7r52"]
+font_size = 100
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7aj56")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 147.0
+text = "Guide_The_Marble_PNP"
+label_settings = SubResource("LabelSettings_r7r52")
+horizontal_alignment = 1
+
+[node name="Copyright Disclaimer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 616.0
+offset_right = 420.0
+offset_bottom = 639.0
+text = "Copyright (C) 2025 Daniel Hanrahan Tools and Games"
+
+[node name="GNU GPL Disclaimer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 150.0
+offset_right = 1147.0
+offset_bottom = 303.0
+text = "This program is free software: you can redistribute it and/or modify it under the terms of the GNU
+General Public License as published by the Free Software Foundation, either version 3 of the license, or (at your option) any later version.
+This program is distributed in hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details. You should have recieved a copy of the GNU General Public License along with this program.
+ If not, see https://www.gnu.org/licenses
+"
+
+[node name="Creative Commons Attribution-Sharealike Disclaimer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 328.0
+offset_right = 1060.0
+offset_bottom = 377.0
+text = "Information just about the stuff in this software not covered by the GNU General Public License version 3:  This work is licensed under 
+Attribution-ShareAlike 4.0 International"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 449.0
+offset_right = 565.0
+offset_bottom = 492.0
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 522.0
+offset_right = 573.0
+offset_bottom = 573.0
+text = "Exit"
+
+[connection signal="pressed" from="PlayButton" to="." method="PlayButton"]
+[connection signal="pressed" from="ExitButton" to="." method="Exit"]
